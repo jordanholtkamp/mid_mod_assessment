@@ -1,20 +1,17 @@
 class HouseMember
-  def initialize(house)
+  attr_reader :house,
+              :name
+
+  def initialize(house, name)
     @house = house
+    @name = name
   end
 
   def order_member?
-    order_boolean = PotterService.new.tell_me_if_they_are_in_the_order
-  end
-
-  def name
-    require 'pry'; binding.pry
+    PotterService.new.tell_me_if_they_are_in_the_order(@name, @house)
   end
 
   def role
-  end
-
-  def house
   end
 
   def patronus

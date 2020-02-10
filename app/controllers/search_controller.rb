@@ -8,7 +8,7 @@ class SearchController < ApplicationController
     house_members = JSON.parse(response.body, symbolize_names: true)
 
     member_iteration = house_members.map do |member|
-      HouseMember.new(house)
+      HouseMember.new(house, member[:name])
     end
 
     render locals: {
