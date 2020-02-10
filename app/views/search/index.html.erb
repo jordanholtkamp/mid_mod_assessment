@@ -1,3 +1,9 @@
 <h1><%= "Total members: #{house_members.count}" %></h1>
 
-<section class='order-member'>
+<% house_members.each do |member| %>
+  <% if member.order_member? %>
+  <ul class='order-member'>
+    <li>member.name</li>
+  </ul>
+  <% end %>
+<% end %>
