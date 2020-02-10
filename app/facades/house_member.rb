@@ -12,6 +12,7 @@ class HouseMember
   end
 
   def role
+    PotterService.new.tell_me_their_role(@name)
   end
 
   def patronus

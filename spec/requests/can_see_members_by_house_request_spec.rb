@@ -13,12 +13,12 @@ feature 'When I search for members of a house' do
 
     expect(page).to have_css('.order-member', count: 21)
 
-    # within(first('.member')) do
+    within(first('.order-member')) do
       # expect(page).to have_css('.name')
       # expect(page).to have_css('.role')
       # expect(page).to have_css('.house')
       # expect(page).to have_css('.patornus')
-    # end
+    end
   end
 end
 

@@ -3,6 +3,7 @@
 <% house_members.each do |member| %>
   <% if member.order_member? %>
   <ul class='order-member'>
+  <% binding.pry %>
     <li>member.name</li>
     <li>member.role</li>
     <li>member.house</li>
