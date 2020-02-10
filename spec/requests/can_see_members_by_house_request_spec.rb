@@ -7,8 +7,18 @@ feature 'When I search for members of a house' do
     select "Gryffindor", from: :house
     click_button 'Search For Members'
     
-    save_and_open_page
     expect(current_path).to eq '/search'
+
+    expect(page).to have_content('Total members: 41')
+
+    expect(page).to have_css('.order-member', count: 21)
+
+    # within(first('.member')) do
+    #   expect(page).to have_css('.name')
+    #   expect(page).to have_css('.role')
+    #   expect(page).to have_css('.house')
+    #   expect(page).to have_css('.patornus')
+    # end
   end
 end
 
@@ -18,7 +28,7 @@ end
 # (Note: Use the existing select field)
 # And I click "Search For Members“
 # Then I should be on page “/search”
-# Then I should see a total of the number of members for that house. (21 for Gryffindor)
+# Then I should see a total of the number of members for that house. (41 for Gryffindor)
 # And I should see a list of the 21 members of the Order of the Phoenix for house Gryffindor.
 
 # And for each of the members I should see:
